@@ -1,4 +1,4 @@
-Projeto 1 referente às auolas de TBO.
+Projeto 1 referente às aulas de TBO.
 
 
 
