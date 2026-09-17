@@ -2,7 +2,15 @@ Projeto 1 referente às aulas de TBO.
 
 
 
-log:
+# log:
+
+> branch offstream para... coisas offstream.
+>
+> zips são lixo, mantendo até que se confirme a remoção.
 
 
-fetch e tratamento de dados feito;
+
+# Progresso
+
+> fetch e tratamento de dados feito;
+

@@ -2,6 +2,7 @@ CXX:=g++
 CFLAGS:=-g
 OUT=output
 MAINSRC:=main.cpp
+BRANCH = offstream
 
 .PHONY: git
 
@@ -12,4 +13,4 @@ git:
 	@git add .;
 	read -p "Commit message: " msg;
 	git commit -m $msg;
-	git push origin side;
+	git push origin $(BRANCH);
