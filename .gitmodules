@@ -1,0 +1,3 @@
+[submodule "tinylatex"]
+	path = tinylatex
+	url = https://github.com/lissaLuxx/tinylatex
