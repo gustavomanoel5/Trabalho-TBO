@@ -19,6 +19,17 @@ int main(int argc, char * argv[]){
 	if (mfm.fetch_movies(movie_lib)) cerr << "error loading movies\n";
 	if (cfm.fetch_cinemas(cinema_lib)) cerr << "error loading cinemas\n";
 
+	vector<string> types(STR_HASH_MOD, "");
+
+	for (Movie mov : movie_lib.all_movies){
+
+		if (types[stohash(mov.type)] != "" && mov.type != types[stohash(mov.type)]) cout << "CONFLICT!";
+		types[stohash(mov.type)] = mov.type;
+
+	}
+
+
+
 	return 0;
 }
 

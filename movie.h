@@ -6,11 +6,13 @@
 
 
 
+
 using namespace std;
 
 class Movie{
 
-	private:
+			
+	public:
 		long long id;
 		string type;
 		string title;
@@ -21,7 +23,6 @@ class Movie{
 		int runtime_min;
 		vector<string> genres;
 
-	public:
 		Movie(){
 
 		}
@@ -48,7 +49,9 @@ class MovieLib{
 		long long starting_id;
 		vector<Movie> all_movies;
 
-		vector<vector<Movie>> movies_by_genre;
+		vector<pair<string, ll>> movies_by_genre;
+		vector<pair<int, ll>> movies_by_duration;
+		vector<pair<int, ll>> movies_by_start_year;
 
 		void add_movie(const string &id, const string &type, const string &title, const string &og_title, const string &is_adult, const string &start_year, const string &end_year, const string &runtime_min, const vector<string> &genres){
 

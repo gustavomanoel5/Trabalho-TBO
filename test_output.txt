@@ -1,0 +1,30 @@
+size: 30looking for 14 at: 14 currently at: 15
+looking for 14 at: 7 currently at: 8
+looking for 14 at: 10 currently at: 11
+looking for 14 at: 12 currently at: 13
+looking for 14 at: 13 currently at: 14
+13
+looking for 16 at: 14 currently at: 15
+looking for 16 at: 22 currently at: 23
+looking for 16 at: 18 currently at: 19
+looking for 16 at: 16 currently at: 17
+looking for 16 at: 15 currently at: 16
+15
+looking for 30 at: 14 currently at: 15
+looking for 30 at: 22 currently at: 23
+looking for 30 at: 26 currently at: 27
+looking for 30 at: 28 currently at: 29
+looking for 30 at: 29 currently at: 30
+29
+looking for 0 at: 14 currently at: 15
+looking for 0 at: 7 currently at: 8
+looking for 0 at: 3 currently at: 4
+looking for 0 at: 1 currently at: 2
+looking for 0 at: 0 currently at: 1
+-1
+looking for 1 at: 14 currently at: 15
+looking for 1 at: 7 currently at: 8
+looking for 1 at: 3 currently at: 4
+looking for 1 at: 1 currently at: 2
+looking for 1 at: 0 currently at: 1
+0
