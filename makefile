@@ -16,6 +16,5 @@ git:
 	git push origin $(BRANCH);
 
 test:
-	@$(CXX) test.cpp -o test; \
+	@$(CXX) -g test.cpp -o test; \
 	./test > test_output.txt 2> test_error.txt; \
-	less test_output.txt;

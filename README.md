@@ -13,4 +13,5 @@ Projeto 1 referente às aulas de TBO.
 # Progresso
 
 > fetch e tratamento de dados feito;
-
+>
+> sort por gênero e tipo feitos [REFAZER PARA BITSET];

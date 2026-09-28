@@ -21,14 +21,10 @@ int main(int argc, char * argv[]){
 
 	vector<string> types(STR_HASH_MOD, "");
 
-	for (Movie mov : movie_lib.all_movies){
 
-		if (types[stohash(mov.type)] != "" && mov.type != types[stohash(mov.type)]) cout << "CONFLICT!";
-		types[stohash(mov.type)] = mov.type;
-
-	}
-
-
+	movie_lib.sort_by_genre();
+	movie_lib.sort_by_type();
+	
 
 	return 0;
 }

@@ -3,26 +3,17 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <cstdlib>
+
+#include "bitset.h"
 
 using namespace std;
 
 #define ll long long
 #define is_null(x, y, z) x == R"(\N)" ? z : y 
-#define STR_HASH_MOD 1e2
+#define STR_HASH_MOD 1e3 + 5
 
 
-class Bitset {
 
-	void * data;
-
-	Bitset(const ll &size){
-
-		data = malloc(size);
-
-	}
-
-};
 
 
 vector<string> _split(const string &str, const char &del){
@@ -60,8 +51,15 @@ string trim(const string &str){
 	
 }
 
+vector<pair<string, ll>> hash_mem;
 
 ll stohash(const string &str){
+
+	for (pair<string, ll> item : hash_mem){
+
+		if (item.first == str) return item.second;
+
+	}
 
 	const ll p = 31;
 	const ll m = STR_HASH_MOD;
@@ -75,8 +73,10 @@ ll stohash(const string &str){
 
 	}
 
+	hash_mem.push_back({str, hash_val});
 	return hash_val;
 }
+
 
 ll bin_search(const vector <pair<int, ll>> &v, int val, const ll i = -1, const ll p = -1){ // FOR PAIRS OF INT & LL
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "utils.h"
+#include <string>
 
 #define max_bins_v 30
 
@@ -10,20 +11,20 @@ int main(){
 
 
 
-	vector<pair<int, ll>> bins_v;
+	Bitset test(32);
 
-	cout << "size: " << max_bins_v;	
+	test.set_bit(0);
 
-	for (int i = 1; i <= max_bins_v; i++){
+	Bitset test2(32);
 
-		pair<int, ll> np = {i, i+1};
-		bins_v.push_back(np);
+
+	for (int i = 0; i < 12; i++){
+
+		test.set_bit(i);
+
 	}
 
-	cout << bin_search(bins_v, max_bins_v / 2 - 1) << endl;
-	cout << bin_search(bins_v, max_bins_v / 2 + 1) << endl;
-	cout << bin_search(bins_v, max_bins_v) << endl;
-	cout << bin_search(bins_v, 0) << endl;
-	cout << bin_search(bins_v, 1) << endl;
+	cout << (*(test.get_data()) & 0)<< endl;
+	cout << (test2.get_bit(32) & test.get_bit(32)) << endl;
 	return 0;
 }

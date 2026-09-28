@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include "utils.h"
 
 
 
@@ -49,7 +49,8 @@ class MovieLib{
 		long long starting_id;
 		vector<Movie> all_movies;
 
-		vector<pair<string, ll>> movies_by_genre;
+		vector<pair<string, vector<ll>>> movies_by_genre;
+		vector<pair<string, vector<ll>>> movies_by_type;
 		vector<pair<int, ll>> movies_by_duration;
 		vector<pair<int, ll>> movies_by_start_year;
 
@@ -63,5 +64,68 @@ class MovieLib{
 			all_movies.push_back(mov);
 		}
 
-		
+
+
+	
+		void sort_by_genre(){
+			movies_by_genre.resize(STR_HASH_MOD);
+			for (Movie item : all_movies){
+
+				for (string genre : item.genres){
+
+					if (movies_by_genre[stohash(genre)].first == genre) {
+
+						movies_by_genre[stohash(genre)].second.push_back(item.id);
+
+					}
+
+					else if (movies_by_genre[stohash(genre)].second.size() != 0){
+
+						cerr << "CONFLITO DE HASH: DADOS SOBRESCRITOS (" << genre << " e " << movies_by_genre[stohash(genre)].first << ")\n";
+
+					}
+
+					else {
+
+						movies_by_genre[stohash(genre)].first = genre;
+						movies_by_genre[stohash(genre)].second.push_back(item.id);				
+	
+					}
+	
+				}
+
+			}
+
+
+		}
+
+		void sort_by_type(){
+			movies_by_type.resize(STR_HASH_MOD);
+			for (Movie item : all_movies){
+
+
+					if (movies_by_type[stohash(item.type)].first == item.type) {
+
+						movies_by_type[stohash(item.type)].second.push_back(item.id);
+
+					}
+
+					else if (movies_by_type[stohash(item.type)].second.size() != 0){
+
+						cerr << "CONFLITO DE HASH: DADOS SOBRESCRITOS (" << item.type << " e " << movies_by_type[stohash(item.type)].first << ")\n";
+
+					}
+
+					else {
+
+						movies_by_type[stohash(item.type)].first = item.type;
+						movies_by_type[stohash(item.type)].second.push_back(item.id);				
+	
+					}
+	
+
+			}
+
+
+		}
 };
