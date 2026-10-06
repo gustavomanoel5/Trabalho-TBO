@@ -148,7 +148,7 @@ class MovieLib{
 
 
 		void quick_sort(vector<Movie>& vec, ll low, ll high, const string& type) {
-			if (type != "duration" || type != "year") return;
+			if (type != "duration" && type != "year") return;
 
 			while (low < high) {
 
