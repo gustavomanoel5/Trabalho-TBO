@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include <chrono>
 #include "file_manager.h"
 #include "movie.h"
 #include "utils.h"
@@ -9,6 +10,7 @@ using namespace std;
 
 int main(int argc, char * argv[]){
 
+	auto begin = chrono::high_resolution_clock::now();
 
 	MovieFileManager mfm("data/filmesCrop.txt");
 	MovieLib movie_lib;
@@ -24,7 +26,15 @@ int main(int argc, char * argv[]){
 
 	movie_lib.sort_by_genre();
 	movie_lib.sort_by_type();
+	movie_lib.sort_by_duration();
+	movie_lib.sort_by_duration();
 	
+	auto stop = chrono::high_resolution_clock::now();
+
+	auto duration = chrono::duration_cast<chrono::seconds> (stop - begin);
+
+
+	cout << "[EXECUTION TIME: " << duration << "]\n";	
 
 	return 0;
 }

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cassert>
 #include <cinttypes>
-
+#include <string>
 
 using namespace std;
 
@@ -29,7 +29,7 @@ class BitPointer {
 			this -> p = p;
 			this -> sect = sect;
 
-
+			
 		}
 
 
@@ -60,10 +60,14 @@ class Bitset {
 			bit_p.set_pos(data, 0);
 		}
 
-		void resize(const ull &size, const ull &mult){
+		Bitset() {}
 
-			
+		void resize(const ull &size, const ull &sections){
+
+			data = (char *) calloc(size, sections);	
+			bit_p.set_pos(data, 0);
 	
+
 		}
 
 		char * get_data(){
@@ -73,7 +77,8 @@ class Bitset {
 		}
 	
 		void set_bit(const ull &pos, const ull &section = 0){
-
+			bit_p.set_pos(data, 0);
+			
 			
 			for (int i = 0; i < section; i++){
 
@@ -83,7 +88,9 @@ class Bitset {
 			
 			bit_p.set_pos(bit_p.get_pos() + pos / 8, bit_p.get_sect());
 
-			*(bit_p.get_pos()) = *(bit_p.get_pos()) | (1 << (pos % 8)); 
+			*(bit_p.get_pos()) = *(bit_p.get_pos()) | (1 << (pos % 8));
+
+		//	cout << "Bit set at " << pos << " as " << *bit_p.get_pos() << endl;
 		}
 
 

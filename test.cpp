@@ -15,16 +15,18 @@ int main(){
 
 	test.set_bit(0);
 
-	Bitset test2(32);
-
 
 	for (int i = 0; i < 12; i++){
 
 		test.set_bit(i);
 
 	}
+	
+	Bitset test3;
+	test3.resize(584121, 1);
+	test3.set_bit(10268);
+	
+	cout << test3.get_bit(10);
 
-	cout << (*(test.get_data()) & 0)<< endl;
-	cout << (test2.get_bit(32) & test.get_bit(32)) << endl;
 	return 0;
 }

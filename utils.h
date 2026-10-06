@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <ranges>
 
 #include "bitset.h"
 
@@ -15,6 +16,21 @@ using namespace std;
 
 
 
+
+/*vector<string> _split(const string &str, const char &del){
+
+
+	vector<string> r;
+
+	for (auto word : views::split(str, del)){
+
+		r.emplace_back(word.begin(), word.end());
+
+	}
+
+        return r;
+
+}*/
 
 vector<string> _split(const string &str, const char &del){
 
