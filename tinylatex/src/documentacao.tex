@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage{geometry}
+
+\geometry{margin=1cm}
+
+\author{Elise W.\and Gustavo L.}
+\date{}
+
+\title{TBO: Projeto 1}
+
+\begin{document}
+
+\maketitle
+
+\section*{Considerações}
+
+	\begin{itemize}
+
+		\item Nenhum Big O foi calculado com precisão matemática, as estimativas são derivações do material e análise Cunzoio [REMOVE THIS FFS].
+
+		\item O motto deste projeto é velocidade acima de tudo, na medida do que cabe às mentes dos desenvolvedores. Em geral, soluções mais rápidas (e mais custosas em memória) são preferidas ao seu contrário, 
+embora esforços de minimizar o custo em memória tenham sido feitos.
+
+		\item A extensão dos recursos específicos para Linux pode estar limitada.
+
+	\end{itemize}
+
+\section{Módulo 1}
+
+\subsection{Pré-processamento: }
+
+	\begin{itemize}
+	
+		\item O pré-processamento é dado pela iteração de cada entrada de dados em ambos os arquivos e salvamento seus dados em um vetor, em que cujos índices são os IDs de cada entrada. Elas são referenciadas a partir daí por seus índices.
+
+		\item [A FAZER] São implementados caches de buscas recentes e arquivos de cache tratados dos vetores de dados, para otimizar pesquisas frequentes e tempo de inicialização.
+
+	\end{itemize}
+\subsection{Estruturas de dados implementadas: }
+
+	\begin{itemize}
+		
+		\item As estruturas de dados implementadas são hash e bitset (para uma pesquisa geralmente ótima com filtro de gêneros).  Há uma redução drástica de módulo para a função hash como método de reduzir desperdício de memória.
+
+	\end{itemize}
+
+\subsection{Técnicas de busca e ordenação: }
+	
+		funções hash e operações bit a bit com Lazy Evaluation são usadas para busca com filtros de gênero.
+
+\section{Modulo 2}
+
+\subsection{Estruturas de dados implementadas: }
+
+		Vetor (de índices) é usado nos dados organizados por quantidades.
+
+\subsection{Técnicas de busca e ordenação: }
+
+	 	Powersort [A FAZER] é usado para ordenar dados quantitativos e busca binária (com span [A FAZER]) é aplicada para buscar intervalos ou elementos de vetores selecionados.
+
+
+\end{document}
